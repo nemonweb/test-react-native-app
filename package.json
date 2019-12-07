@@ -37,6 +37,7 @@
   },
   "jest": {
     "preset": "react-native",
+    "testRegex": "/src/.*\\.(test|spec)\\.[jt]sx?$",
     "moduleFileExtensions": [
       "ts",
       "tsx",

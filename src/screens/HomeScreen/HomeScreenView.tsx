@@ -17,7 +17,13 @@ import {
 
 import React from 'react';
 
-export const HomeScreenView = ({
+interface Props {
+  usingHermes: boolean;
+  onPress1?: () => void;
+  onPress2?: () => void;
+}
+
+export const HomeScreenView: React.FC<Props> = ({
   usingHermes,
   onPress1: handlePress,
   onPress2: handlePress2,
