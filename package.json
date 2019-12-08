@@ -69,7 +69,7 @@
         "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
         "type": "android.emulator",
         "device": {
-          "avdName": "Nexus_5X"
+          "avdName": "rn_android_emulator"
         }
       },
       "android.emu.release": {
