@@ -17,3 +17,6 @@ jobs:
       - name: Download Android Emulator Image
         run: |
           echo "y" | sudo $ANDROID_ROOT/tools/bin/sdkmanager --install "system-images;android-28;google_apis;x86"
+        env:
+          ANDROID_ROOT: /usr/local/lib/android
+          ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
