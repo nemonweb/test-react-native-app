@@ -42,4 +42,4 @@ jobs:
       - run: yarn detox build -c android.emu.debug
       - run: ls ~/.gradle/caches
       - run: ls ~/.android/avd
-      - run: yarn start & yarn detox test -c -h android.emu.debug
+      - run: yarn start & yarn detox test -c -H android.emu.debug
