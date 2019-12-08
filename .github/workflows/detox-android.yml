@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - run: kvm-ok
+      - run: cat /proc/cpuinfo
