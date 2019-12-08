@@ -23,4 +23,4 @@ jobs:
 
       - name: Download Android Emulator Image
         run: |
-          echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install "system-images;android-29;google_apis;x86"
+          echo "y" | sudo $ANDROID_HOME/tools/bin/sdkmanager --install "system-images;android-29;google_apis;x86"
