@@ -69,7 +69,7 @@
         "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
         "type": "android.emulator",
         "device": {
-          "avdName": "rn_android_emulator"
+          "avdName": "Nexus 6"
         }
       },
       "android.emu.release": {
@@ -77,7 +77,7 @@
         "build": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd ..",
         "type": "android.emulator",
         "device": {
-          "avdName": "Nexus_5X"
+          "avdName": "Nexus 6"
         }
       }
     },
