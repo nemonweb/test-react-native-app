@@ -42,6 +42,14 @@ export const HomeScreenView: React.FC<Props> = ({
         )}
         <View style={styles.body}>
           <View style={styles.sectionContainer}>
+            <TouchableOpacity onPress={handlePress} testID="hello_button">
+              <Text>Go to test</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={handlePress2} testID="world_button">
+              <Text>Go to world</Text>
+            </TouchableOpacity>
+
             <Text style={styles.sectionTitle} testID="welcome">
               Step One
             </Text>
@@ -68,13 +76,6 @@ export const HomeScreenView: React.FC<Props> = ({
               Read the docs to discover what to do next:
             </Text>
           </View>
-          <TouchableOpacity onPress={handlePress} testID="hello_button">
-            <Text>Go to test</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={handlePress2} testID="world_button">
-            <Text>Go to world</Text>
-          </TouchableOpacity>
           <LearnMoreLinks />
         </View>
       </ScrollView>
