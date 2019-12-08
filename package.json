@@ -6,7 +6,8 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "detox-setup": "detox clean-framework-cache && detox build-framework-cache"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.5",
@@ -56,6 +57,12 @@
         "device": {
           "type": "iPhone 11"
         }
+      },
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/TestApp.app",
+        "build": "xcodebuild -workspace ios/TestApp.xcworkspace -scheme TestApp -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 11"
       }
     },
     "test-runner": "jest"

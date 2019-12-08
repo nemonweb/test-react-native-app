@@ -1,17 +1,43 @@
-name: CI
+name: Detox ios
 
 on: [push]
 
 jobs:
   build:
+    runs-on: macOS-latest
+    timeout-minutes: 15
 
-    runs-on: ubuntu-latest
-
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_11.2.app
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: node_modules
+        key: node-modules-${{ hashFiles('**/yarn.lock') }}
+
+    - name: Rebuild detox
+      if: steps.cache.outputs.cache-hit == 'true'
+      run: yarn detox-setup
+
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: yarn install
+
+    - name: Cache Pods
+      uses: actions/cache@v1
+      id: podcache
+      with:
+        path: ios/Pods
+        key: pods-${{ hashFiles('**/Podfile.lock') }}
+
+    - name: Update Pods
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        gem update cocoapods xcodeproj
+        cd ios && pod install && cd ..
+
+
