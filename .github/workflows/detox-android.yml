@@ -34,7 +34,7 @@ jobs:
         with:
           api-level: 29
           profile: Nexus 6
-          script: ./gradlew connectedCheck
+          script: ./android/gradlew connectedCheck
 
       - name: Build for detox
         run: |
