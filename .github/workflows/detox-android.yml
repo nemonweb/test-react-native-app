@@ -41,4 +41,5 @@ jobs:
       - run: $ANDROID_HOME/platform-tools/adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed | tr -d '\r') ]]; do sleep 1; done; input keyevent 82'
       - run: yarn detox build -c android.emu.debug
       - run: ls ~/.gradle/caches
+      - run: ls ~/.android/avd
       - run: yarn start & yarn detox test -c android.emu.debug
