@@ -15,5 +15,4 @@ jobs:
           java-version: 1.8
 
       - name: Download Android Emulator Image
-        run: |
-          $ANDROID_HOME/tools/bin/avdmanager create avd --force --name emu --device "Nexus_5X" -k 'system-images;android-28;google_apis;x86'
+        run: ls $ANDROID_HOME
