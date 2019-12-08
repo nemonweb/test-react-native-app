@@ -14,6 +14,5 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Download Android Emulator Image
-        run: ls $ANDROID_HOME/platform-tools
-        run: ls $ANDROID_HOME/platforms
+      - run: ls $ANDROID_HOME/platform-tools
+      - run: ls $ANDROID_HOME/platforms
