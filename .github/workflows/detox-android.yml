@@ -24,3 +24,11 @@ jobs:
       - name: Download Android Emulator Image
         run: |
           echo "y" | sudo $ANDROID_HOME/tools/bin/sdkmanager --install "system-images;android-29;google_apis;x86"
+
+      - name: create emul
+        run: |
+          echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd --force --name emu --device "Nexus 5X" -k 'system-images;android-29;google_apis;x86"
+
+      - name: list emul
+        run: |
+          $ANDROID_ROOT/emulator/emulator -list-avds
