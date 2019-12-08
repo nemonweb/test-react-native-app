@@ -16,4 +16,15 @@ jobs:
         with:
           java-version: 1.8
 
-      - run: ls $ANDROID_HOME/tools/bin/
+      - name: Install Android sdkmanager
+        run: |
+          wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip
+          sudo unzip -d $ANDROID_HOME android-sdk.zip > /dev/null
+
+      - name: Download Android Emulator Image
+        run: |
+          echo "y" | sudo $ANDROID_HOME/tools/bin/sdkmanager --install "system-images;android-29;google_apis;x86"
+
+      - name: create emu
+        run: |
+          echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd --force --name emu --device "Nexus 5X" -k 'system-images;android-29;google_apis;x86'
