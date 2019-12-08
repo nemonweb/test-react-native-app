@@ -28,7 +28,6 @@ jobs:
 
       - name: Run Android Emulator
         run: |
-          echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-28;google_apis;x86' > /dev/null
           echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd -n test -k 'system-images;android-28;google_apis;x86' --force
           echo $ANDROID_HOME/emulator/emulator -list-avds
           echo "Starting emulator"
@@ -36,17 +35,3 @@ jobs:
           $ANDROID_HOME/platform-tools/adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed | tr -d '\r') ]]; do sleep 1; done; input keyevent 82'
           $ANDROID_HOME/platform-tools/adb devices
           echo "Emulator started"
-
-      - uses: actions/cache@v1
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
-      - name: Build for detox
-        run: |
-          yarn detox build -c android.emu.debug
-
-      - name: Android Detox
-        run: yarn start & yarn detox test -c android.emu.debug
