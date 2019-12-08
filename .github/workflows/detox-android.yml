@@ -20,4 +20,3 @@ jobs:
 
         env:
           ANDROID_ROOT: /usr/local/lib/android/
-          ANDROID_SDK_ROOT: /usr/local/lib/android/sdk/platforms/android-28
