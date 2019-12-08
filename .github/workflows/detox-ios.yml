@@ -20,9 +20,9 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('**/yarn.lock') }}
 
-      # - name: Rebuild detox
-      #   if: steps.cache.outputs.cache-hit == 'true'
-      #   run: yarn detox-setup
+      - name: Rebuild detox
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: yarn detox-setup
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
