@@ -27,4 +27,4 @@ jobs:
 
       - name: list emul
         run: |
-          $ANDROID_ROOT/emulator/emulator -list-avds
+          $ANDROID_HOME/emulator/emulator -list-avds
