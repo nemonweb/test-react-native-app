@@ -11,5 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - run: egrep -c '(vmx|svm)' /proc/cpuinfo
       - run: kvm-ok
