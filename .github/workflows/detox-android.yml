@@ -26,6 +26,9 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install
 
+      - name: list
+        run: $ANDROID_HOME/tools/bin/avdmanager list
+
       - name: run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
