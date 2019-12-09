@@ -36,8 +36,10 @@ jobs:
 
       - name: Run Android Emulator
         run: echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-28;default;x86'
-      - run: echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd --force -n test -k 'system-images;android-28;default;x86' --device 'Nexus 5'
-      - run: nohup $ANDROID_HOME/emulator/emulator -avd test -verbose -skin 768x1280 -no-snapshot -wipe-data -noaudio -no-boot-anim -netdelay none &
+
+      - run: echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd --force -n test -k 'system-images;android-28;default;x86' --device "Nexus 5X"
+      - run: nohup $ANDROID_HOME/emulator/emulator -avd test -skin 768x1280 -no-audio -no-snapshot -no-window &
+
       - run: $ANDROID_HOME/platform-tools/adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed | tr -d '\r') ]]; do sleep 1; done; input keyevent 82'
       - run: yarn detox build -c android.emu.debug
       - run: ls ~/.gradle/caches
