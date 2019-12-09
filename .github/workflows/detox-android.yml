@@ -26,14 +26,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install
 
-      - name: Cache gradle
-        uses: actions/cache@v1
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
       - name: Run Android Emulator
         run: echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-28;default;x86'
 
@@ -42,6 +34,4 @@ jobs:
 
       - run: $ANDROID_HOME/platform-tools/adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed | tr -d '\r') ]]; do sleep 1; done; input keyevent 82'
       - run: yarn detox build -c android.emu.debug
-      - run: ls ~/.gradle/caches
-      - run: ls ~/.android/avd
       - run: yarn start & yarn detox test -H -c android.emu.debug
