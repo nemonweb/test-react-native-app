@@ -1,4 +1,4 @@
-name: Detox android
+name: detox_android
 
 on: [push]
 
