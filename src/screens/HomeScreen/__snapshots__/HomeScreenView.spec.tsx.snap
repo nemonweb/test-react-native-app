@@ -82,6 +82,50 @@ exports[`HomeScreenView renders correctly base 1`] = `
             }
           }
         >
+          <View
+            accessible={true}
+            focusable={false}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID="hello_button"
+          >
+            <Text>
+              Go to test
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            focusable={false}
+            isTVSelectable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID="world_button"
+          >
+            <Text>
+              Go to world
+            </Text>
+          </View>
           <Text
             style={
               Object {
@@ -246,50 +290,6 @@ exports[`HomeScreenView renders correctly base 1`] = `
             }
           >
             Read the docs to discover what to do next:
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          focusable={false}
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-            }
-          }
-          testID="hello_button"
-        >
-          <Text>
-            Go to test
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          focusable={false}
-          isTVSelectable={true}
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-            }
-          }
-          testID="world_button"
-        >
-          <Text>
-            Go to world
           </Text>
         </View>
         <View

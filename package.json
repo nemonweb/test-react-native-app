@@ -16,15 +16,15 @@
     "@react-navigation/native-stack": "^5.0.0-alpha.13",
     "@react-navigation/stack": "^5.0.0-alpha.37",
     "react": "16.9.0",
-    "react-native": "0.61.4",
+    "react-native": "0.61.5",
     "react-native-gesture-handler": "^1.5.2",
     "react-native-reanimated": "^1.4.0",
     "react-native-safe-area-context": "^0.6.1",
     "react-native-screens": "^2.0.0-alpha.17"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/runtime": "^7.6.2",
+    "@babel/core": "^7.7.5",
+    "@babel/runtime": "^7.7.6",
     "@react-native-community/eslint-config": "^0.0.5",
     "@types/jest": "^24.0.18",
     "@types/react-native": "^0.60.22",
@@ -34,7 +34,7 @@
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
     "react-test-renderer": "16.9.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.7.3"
   },
   "jest": {
     "preset": "react-native",
@@ -63,6 +63,22 @@
         "build": "xcodebuild -workspace ios/TestApp.xcworkspace -scheme TestApp -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
         "name": "iPhone 11"
+      },
+      "android.emu.debug": {
+        "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
+        "type": "android.emulator",
+        "device": {
+          "avdName": "test"
+        }
+      },
+      "android.emu.release": {
+        "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
+        "build": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd ..",
+        "type": "android.emulator",
+        "device": {
+          "avdName": "test"
+        }
       }
     },
     "test-runner": "jest"
