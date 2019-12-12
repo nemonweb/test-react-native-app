@@ -91,7 +91,7 @@
   "release": {
     "branch": "master",
     "npmPublish": false,
-    "ci": false,
+    "ci": true,
     "repositoryUrl": "https://github.com/nemonweb/test-react-native-app",
     "plugins": [
       "@semantic-release/commit-analyzer",
