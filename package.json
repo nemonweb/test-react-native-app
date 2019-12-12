@@ -101,8 +101,11 @@
         "@semantic-release/git",
         {
           "assets": [
-            "ios/$PROJECTNAME*/Info.plist",
-            "ios/$PROJECTNAME.xcodeproj/project.pbxproj",
+            "ios/TestApp/Info.plist",
+            "ios/TestAppTests/Info.plist",
+            "ios/TestApp.xcodeproj/project.pbxproj",
+            "ios/TestApp-tvOSTests/Info.plist",
+            "ios/TestApp-tvOS/Info.plist",
             "android/app/build.gradle",
             "package.json"
           ],
