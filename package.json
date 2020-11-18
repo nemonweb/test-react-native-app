@@ -38,7 +38,7 @@
     "metro-react-native-babel-preset": "^0.56.4",
     "react-native-version": "^3.2.0",
     "react-test-renderer": "16.9.0",
-    "semantic-release": "^16.0.1",
+    "semantic-release": "^17.2.3",
     "typescript": "^3.7.4"
   },
   "jest": {
